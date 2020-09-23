@@ -1,0 +1,209 @@
+---
+navigationLabel: home
+---
+
+import { Link as GatsbyLink } from "gatsby"
+import { mix } from "@theme-ui/color"
+import { PostCard } from "../components/PostCard"
+
+<Alert variant="error">I'm currently on contract 😊</Alert>
+<Divider />
+
+# [paul-scanlon](#paul-scanlon)
+
+Front End Developer / UX Engineer - React / Gatsby - based in Worthing | London / UK.
+
+React, Gatsby, JavaScript, TypeScript/Flow, styled-components, Theme UI, Storybook, TDD (Jest/Enzyme/React Testing Library) and a tiny bit of Apollo/GraphQL, Node and FaunaDB
+
+<Button
+  as="a"
+  variant="success"
+  href="https://docs.google.com/document/d/17zH4XZAOoIicQtAPraxPwy48UZrogchASAeQjXjlJdM/edit?usp=sharing"
+  target="_blank"
+  sx={{
+    mr: 2,
+  }}
+>
+  View CV/Resume
+</Button>
+
+<Link
+  href="https://drive.google.com/file/d/1OH6VR_rqASnqcW6qzdSkvkiLH7SWkesO/view?usp=sharing"
+  target="_blank"
+  title="View CV"
+>
+  .pdf version
+</Link>
+<Divider />
+<Divider />
+
+## [intro](#intro)
+
+Well hey there! 👋 I'm Paul and a long long time ago was a designer but after a few years of pixel pushing I realised code is just better! I’ve held various positions in and around advertising and web development in both permanent and contract positions since 2005, and I once co-founded and ran an award winning digital production agency called Super natural based in London.
+
+<Divider />
+
+<Flex
+  sx={{ flexWrap: 'wrap'}}
+>
+<Box
+  sx={{
+    width: ["100%", "100%", "55%"],
+    mb: 3,
+    pr: [0,0, 4],
+  }}
+>
+
+## contact
+
+<Text>Email</Text>
+<Link href="mailto:pauliescanlon@gmail.com" target="_blank" variant="styles.a">
+  pauliescanlon@gmail.com
+</Link>
+<Divider />
+
+<Text>Twitter</Text>
+<Link
+  href="https://twitter.com/PaulieScanlon"
+  target="_blank"
+  variant="styles.a"
+>
+  https://twitter.com/PaulieScanlon
+</Link>
+<Divider />
+
+<Text>GitHub</Text>
+<Link
+  href="https://github.com/PaulieScanlon"
+  target="_blank"
+  variant="styles.a"
+>
+  https://github.com/PaulieScanlon
+</Link>
+<Divider />
+
+<Text>Web</Text>
+<Link
+  href="https://www.pauliescanlon.io"
+  target="_blank"
+  variant="styles.a"
+>
+  https://www.pauliescanlon.io
+</Link>
+<Divider />
+<Divider />
+</Box>
+
+<Box
+  sx={{
+    width: ["100%", "100%", "45%"],
+    mb: 3
+  }}
+>
+
+## blog topics
+
+<Divider />
+
+<SourceTags>
+  {(tags) => (
+    <Box>
+      {tags
+        .sort((a, b) => b.percent - a.percent)
+        .map((tag, index) => {
+          const { name, count, percent } = tag
+          return (
+            <Badge
+              key={index}
+              variant="primary"
+              sx={{
+                mr: 2,
+                mb: 2,
+                color: mix("secondary", "primary", `${index / tags.length}`),
+                borderColor: mix(
+                  "secondary",
+                  "primary",
+                  `${index / tags.length}`
+                ),
+              }}
+            >
+              {name}
+            </Badge>
+          )
+        })}
+    </Box>
+  )}
+</SourceTags>
+
+<Divider />
+<Divider />
+
+</Box>
+</Flex>
+
+## latest posts
+
+<Divider />
+
+<SourceList filter="posts">
+  {(posts) => (
+    <Flex
+      sx={{
+        flexWrap: "wrap",
+        ml: (theme) => `-${theme.space[2]}px`,
+        mr: (theme) => `-${theme.space[2]}px`,
+      }}
+    >
+      {posts
+        .filter((edge) => !edge.node.frontmatter.isPrivate)
+        .reduce((posts, post) => {
+          return post.node.frontmatter.pinned
+            ? [post, ...posts]
+            : [...posts, post]
+        }, [])
+        .splice(0, 4)
+        .map((edge, index) => {
+          const {
+            frontmatter: {
+              title,
+              featuredImageUrl,
+              tags,
+              date,
+              dateModified,
+              pinned,
+            },
+            excerpt,
+            fields: { slug },
+          } = edge.node
+          return (
+            <PostCard
+              key={index}
+              title={title}
+              featuredImageUrl={featuredImageUrl}
+              tags={tags}
+              date={date}
+              dateModified={dateModified}
+              excerpt={excerpt}
+              slug={slug}
+              pinned={pinned}
+            />
+          )
+        })}
+    </Flex>
+  )}
+</SourceList>
+<Divider />
+<Flex
+  sx={{
+    justifyContent: "center",
+  }}
+>
+  <Box>
+    <Button as={GatsbyLink} variant="ghost" to="/posts">
+      More posts{" "}
+      <Box as="span" role="img" aria-label="pencil">
+        ✏️
+      </Box>
+    </Button>
+  </Box>
+</Flex>

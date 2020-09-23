@@ -1,0 +1,57 @@
+---
+navigationLabel: posts
+---
+
+import { Link as GatsbyLink } from "gatsby"
+import { PostCard } from "../components/PostCard"
+
+# posts
+
+<SourceList filter="posts">
+  {(posts) => {
+    return (
+      <Flex
+        sx={{
+          flexWrap: "wrap",
+          ml: (theme) => `-${theme.space[2]}px`,
+          mr: (theme) => `-${theme.space[2]}px`,
+        }}
+      >
+        {posts
+          .filter((edge) => !edge.node.frontmatter.isPrivate)
+          .reduce((posts, post) => {
+            return post.node.frontmatter.pinned
+              ? [post, ...posts]
+              : [...posts, post]
+          }, [])
+          .map((edge, index) => {
+            const {
+              frontmatter: {
+                title,
+                featuredImageUrl,
+                tags,
+                date,
+                dateModified,
+                pinned,
+              },
+              excerpt,
+              fields: { slug },
+            } = edge.node
+            return (
+              <PostCard
+                key={index}
+                title={title}
+                featuredImageUrl={featuredImageUrl}
+                tags={tags}
+                date={date}
+                dateModified={dateModified}
+                excerpt={excerpt}
+                slug={slug}
+                pinned={pinned}
+              />
+            )
+          })}
+      </Flex>
+    )
+  }}
+</SourceList>
