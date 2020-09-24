@@ -1,4 +1,4 @@
-import codeTheme from "@theme-ui/prism/presets/shades-of-purple.json"
+import codeTheme from "@theme-ui/prism/presets/night-owl.json"
 import baseTheme from "@pauliescanlon/gatsby-theme-terminal/src/gatsby-plugin-theme-ui"
 
 export default {
@@ -6,13 +6,13 @@ export default {
   colors: {
     ...baseTheme.colors,
     text: "#FFFFFF",
-    muted: "#8b87ea",
-    primary: "#f056c7",
-    secondary: "#c39eff",
-    error: "#ff4343",
-    success: "#58e6d9",
-    background: "#131127",
-    surface: "#232140",
+    muted: "#1588ed",
+    primary: "#e5b875",
+    secondary: "#1588ed",
+    error: "#96cf4a",
+    success: "#ec5d49",
+    background: "#041c3a",
+    surface: "#102759",
   },
 
   styles: {
@@ -25,7 +25,7 @@ export default {
       },
       code: {
         ...baseTheme.styles.p.code,
-        color: "inherit",
+        color: "#addb66",
         fontSize: "14px",
         wordBreak: "break-word",
         backgroundColor: "surface",

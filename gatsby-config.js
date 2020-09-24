@@ -1,25 +1,15 @@
 module.exports = {
   siteMetadata: {
-    name: "Paul Scanlon",
+    name: "Maxence Laumonier",
     description:
-      "I'm a Front End Developer / UX Engineer based in Worthing | London / UK. React, Gatsby, JavaScript, TypeScript/Flow, styled-components, Theme UI, Storybook, TDD (Jest/Enzyme/React Testing Libary) and a tiny bit of Node and FaunaDB",
+      "I'm a Data Scientist",
     keywords: [
-      "React",
-      "Gatsby",
-      "JavaScript",
-      "TypeScript",
-      "Flow",
-      "styled-components",
-      "Theme UI",
-      "Jest",
-      "Enzyme",
-      "React Testing Libary",
-      "Node.js",
-      "FaunaDB",
-      "JAMStack",
-      "Component Library",
+      "Data",
+      "Data Science",
+      "Python"
+
     ],
-    siteUrl: "https://paulie.dev",
+    siteUrl: "https://maxence.dev",
     siteImage: "https://paulie.dev/images/paulie-open-graph-image.jpg",
     profileImage: ``,
     lang: `en`,
@@ -38,8 +28,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Paul Scanlon`,
-        short_name: `Ps`,
+        name: `Maxence Laumonier`,
+        short_name: `Ml`,
         start_url: `/`,
         lang: `en`,
         background_color: `#282a36`,

@@ -137,9 +137,9 @@ export const SourceArticle = ({
       <Divider />
       <Divider />
       <Text>
-        If you've enjoyed this post I'd love to hear from you:{" "}
-        <Link href="https://twitter.com/PaulieScanlon" target="_blank">
-          @pauliescanlon
+        Replace this text in SourceArticle.js:{" "}
+        <Link href="maxence@maxence.dev" target="_blank">
+          maxence@maxence.dev
         </Link>
       </Text>
       <Divider />
