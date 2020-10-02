@@ -137,13 +137,13 @@ export const SourceArticle = ({
       <Divider />
       <Divider />
       <Text>
-        Replace this text in SourceArticle.js:{" "}
+        If you enjoyed this article I'd love to hear from you :{" "}
         <Link href="maxence@maxence.dev" target="_blank">
           maxence@maxence.dev
         </Link>
       </Text>
       <Divider />
-      <Link href="https://ko-fi.com/P5P31B7G8" target="_blank">
+      <Link href="https://ko-fi.com/maxencedev" target="_blank">
         <Image src="https://www.ko-fi.com/img/githubbutton_sm.svg" />
       </Link>
       {/* <Box
