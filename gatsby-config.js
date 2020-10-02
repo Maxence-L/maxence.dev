@@ -10,7 +10,7 @@ module.exports = {
 
     ],
     siteUrl: "https://maxence.dev",
-    siteImage: "https://paulie.dev/images/paulie-open-graph-image.jpg",
+    siteImage: "",
     profileImage: `/`,
     lang: `en`,
     config: {
