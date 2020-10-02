@@ -11,7 +11,7 @@ module.exports = {
     ],
     siteUrl: "https://maxence.dev",
     siteImage: "https://paulie.dev/images/paulie-open-graph-image.jpg",
-    profileImage: ``,
+    profileImage: `/`,
     lang: `en`,
     config: {
       sidebarWidth: 200,
@@ -22,14 +22,14 @@ module.exports = {
     {
       resolve: "@pauliescanlon/gatsby-theme-terminal",
       options: {
-        source: ["posts", "writing"],
+        source: ["posts"],
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Maxence Laumonier`,
-        short_name: `Ml`,
+        name: `maxence.dev`,
+        short_name: `m.dev`,
         start_url: `/`,
         lang: `en`,
         background_color: `#282a36`,
