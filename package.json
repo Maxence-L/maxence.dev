@@ -26,6 +26,7 @@
     "matter-js": "^0.14.2",
     "mdx-embed": "^0.0.7",
     "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-svg-bubble-slider": "^0.0.52",
     "theme-ui": "^0.3.1"
   }
